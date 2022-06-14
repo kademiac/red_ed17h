@@ -258,7 +258,7 @@
         "id": "8061ccc658bf1154",
         "type": "sun events",
         "z": "e9c2333c5527ce81",
-        "testmode": true,
+        "testmode": false,
         "verbose": "N",
         "topic": "sunstate",
         "name": "Zonnekoning",
