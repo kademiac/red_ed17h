@@ -34,6 +34,121 @@
         "sessionExpiry": ""
     },
     {
+        "id": "870153f80ff36022",
+        "type": "ui_tab",
+        "name": "17",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "817db5f41545d3dc",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "d84a2c02745b8599",
+        "type": "ui_group",
+        "name": "bureau",
+        "tab": "870153f80ff36022",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
         "id": "e7df2de42142b237",
         "type": "mqtt out",
         "z": "e9c2333c5527ce81",
@@ -56,7 +171,7 @@
         "type": "mqtt in",
         "z": "e9c2333c5527ce81",
         "name": "17_bureau_ledstrip",
-        "topic": "17_bureau_ledstrip",
+        "topic": "stat/17_bureau_ledstrip/RESULT",
         "qos": "2",
         "datatype": "auto",
         "broker": "525cd2c70143bff5",
@@ -64,8 +179,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 170,
-        "y": 300,
+        "x": 230,
+        "y": 240,
         "wires": [
             [
                 "ce63af5d7e97f9e8"
@@ -90,7 +205,7 @@
         "payload": "on",
         "payloadType": "str",
         "x": 200,
-        "y": 120,
+        "y": 140,
         "wires": [
             [
                 "e7df2de42142b237"
@@ -127,7 +242,7 @@
         "type": "debug",
         "z": "e9c2333c5527ce81",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -136,7 +251,103 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 450,
-        "y": 300,
+        "y": 240,
         "wires": []
+    },
+    {
+        "id": "8061ccc658bf1154",
+        "type": "sun events",
+        "z": "e9c2333c5527ce81",
+        "testmode": true,
+        "verbose": "N",
+        "topic": "sunstate",
+        "name": "Zonnekoning",
+        "x": 450,
+        "y": 300,
+        "wires": [
+            [
+                "9f4547171d9d6ea9"
+            ]
+        ],
+        "icon": "font-awesome/fa-sun-o"
+    },
+    {
+        "id": "9f4547171d9d6ea9",
+        "type": "debug",
+        "z": "e9c2333c5527ce81",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 450,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "eb601414149d5224",
+        "type": "inject",
+        "z": "e9c2333c5527ce81",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "3600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "10",
+        "topic": "",
+        "payload": "sunstate",
+        "payloadType": "str",
+        "x": 260,
+        "y": 300,
+        "wires": [
+            [
+                "8061ccc658bf1154"
+            ]
+        ]
+    },
+    {
+        "id": "0d729d6b26a8fb3e",
+        "type": "ui_switch",
+        "z": "e9c2333c5527ce81",
+        "name": "ledstrip",
+        "label": "ledstrip",
+        "tooltip": "ledstrip",
+        "group": "d84a2c02745b8599",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 260,
+        "y": 80,
+        "wires": [
+            [
+                "e7df2de42142b237"
+            ]
+        ]
     }
 ]
