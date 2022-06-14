@@ -103,7 +103,7 @@
         "z": "e9c2333c5527ce81",
         "broker": "7f9600b21ff610b5",
         "device": "cmnd/tasmota_B71CB0/",
-        "name": "17/bureau/ledstrip",
+        "name": "Tasmota_17_bureau_ledstrip",
         "outputs": 1,
         "uidisabler": true,
         "fullTopic": "cmnd/tasmota_B71CB0/",
@@ -112,7 +112,7 @@
         "telePrefix": "",
         "qos": 1,
         "retain": false,
-        "x": 470,
+        "x": 230,
         "y": 340,
         "wires": [
             [
@@ -145,8 +145,31 @@
         "offcolor": "",
         "animate": false,
         "className": "",
+        "x": 490,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c66dc26399f2dbbf",
+        "type": "Tasmota Generic",
+        "z": "e9c2333c5527ce81",
+        "broker": "7f9600b21ff610b5",
+        "device": "cmnd/tasmota_B71CB0/",
+        "name": "cmnd/tasmota_B71CB0/",
+        "outputs": 1,
+        "uidisabler": false,
+        "fullTopic": "cmnd/tasmota_B71CB0/",
+        "cmndPrefix": "",
+        "statPrefix": "",
+        "telePrefix": "",
+        "qos": 1,
+        "retain": false,
+        "subscribeToStat": true,
+        "subscribeToTele": true,
         "x": 210,
-        "y": 340,
+        "y": 440,
         "wires": [
             []
         ]
