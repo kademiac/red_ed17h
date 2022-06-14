@@ -1,0 +1,12 @@
+{
+    "name": "red_ed17h",
+    "description": "Hal's sister",
+    "version": "0.0.1",
+    "dependencies": {},
+    "node-red": {
+        "settings": {
+            "flowFile": "flow.json",
+            "credentialsFile": "flow_cred.json"
+        }
+    }
+}
