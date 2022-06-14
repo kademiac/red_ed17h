@@ -8,10 +8,10 @@
         "env": []
     },
     {
-        "id": "b53338b28d05938c",
+        "id": "525cd2c70143bff5",
         "type": "mqtt-broker",
-        "name": "krpi4_mqtt_broker",
-        "broker": "10.0.0.53",
+        "name": "17_mqtt_broker",
+        "broker": "localhost",
         "port": "1883",
         "clientid": "",
         "autoConnect": true,
@@ -34,35 +34,117 @@
         "sessionExpiry": ""
     },
     {
-        "id": "7f9600b21ff610b5",
-        "type": "tasmota-mqtt-broker",
-        "name": "krpi4_mqtt_broker",
-        "broker": "10.0.0.53",
-        "port": "1883",
-        "clientid": "",
-        "usetls": false,
-        "keepalive": "60",
-        "cleansession": true
+        "id": "e7df2de42142b237",
+        "type": "mqtt out",
+        "z": "e9c2333c5527ce81",
+        "name": "17_bureau_ledstrip",
+        "topic": "17_bureau_ledstrip",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "525cd2c70143bff5",
+        "x": 470,
+        "y": 120,
+        "wires": []
     },
     {
-        "id": "290d947bd558c8ee",
-        "type": "Tasmota Switch",
+        "id": "c44ed64c03a28d90",
+        "type": "mqtt in",
         "z": "e9c2333c5527ce81",
-        "broker": "7f9600b21ff610b5",
-        "device": "tasmota_%06X",
-        "name": "Tasmota_17_bureau_ledstrip",
-        "outputs": 1,
-        "uidisabler": true,
-        "fullTopic": "cmnd/tasmota_B71CB0/",
-        "cmndPrefix": "",
-        "statPrefix": "",
-        "telePrefix": "",
-        "qos": 1,
-        "retain": false,
-        "x": 230,
-        "y": 100,
+        "name": "17_bureau_ledstrip",
+        "topic": "17_bureau_ledstrip",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "525cd2c70143bff5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 300,
         "wires": [
-            []
+            [
+                "ce63af5d7e97f9e8"
+            ]
         ]
+    },
+    {
+        "id": "0347d51bc49d11df",
+        "type": "inject",
+        "z": "e9c2333c5527ce81",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "17_bureau_ledstrip",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 190,
+        "y": 120,
+        "wires": [
+            [
+                "e7df2de42142b237"
+            ]
+        ]
+    },
+    {
+        "id": "6f11063b6c0e34e0",
+        "type": "inject",
+        "z": "e9c2333c5527ce81",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "17_bureau_ledstrip",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 190,
+        "y": 180,
+        "wires": [
+            [
+                "e7df2de42142b237"
+            ]
+        ]
+    },
+    {
+        "id": "ce63af5d7e97f9e8",
+        "type": "debug",
+        "z": "e9c2333c5527ce81",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 450,
+        "y": 300,
+        "wires": []
     }
 ]
