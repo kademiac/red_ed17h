@@ -336,8 +336,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 250,
-        "y": 80,
+        "x": 270,
+        "y": 100,
         "wires": [
             [
                 "e7df2de42142b237"
