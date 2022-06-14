@@ -336,7 +336,7 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 270,
+        "x": 250,
         "y": 80,
         "wires": [
             [
