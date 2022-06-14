@@ -1,1 +1,73 @@
-[]
+[
+    {
+        "id": "e9c2333c5527ce81",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b53338b28d05938c",
+        "type": "mqtt-broker",
+        "name": "krpi4_mqtt_broker",
+        "broker": "10.0.0.53",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "2a3291822b897c48",
+        "type": "debug",
+        "z": "e9c2333c5527ce81",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "af9cf68834217d4c",
+        "type": "mqtt in",
+        "z": "e9c2333c5527ce81",
+        "name": "cmnd/tasmota_B71CB0/",
+        "topic": "cmnd/tasmota_B71CB0/",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "b53338b28d05938c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 160,
+        "wires": [
+            [
+                "2a3291822b897c48"
+            ]
+        ]
+    }
+]
