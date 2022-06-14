@@ -38,7 +38,7 @@
         "type": "mqtt out",
         "z": "e9c2333c5527ce81",
         "name": "17_bureau_ledstrip",
-        "topic": "17_bureau_ledstrip",
+        "topic": "cmnd/17_bureau_ledstrip/POWER",
         "qos": "",
         "retain": "",
         "respTopic": "",
@@ -76,24 +76,20 @@
         "id": "0347d51bc49d11df",
         "type": "inject",
         "z": "e9c2333c5527ce81",
-        "name": "",
+        "name": "cmnd/17_bureau_ledstrip/on",
         "props": [
             {
                 "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
             }
         ],
         "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "topic": "17_bureau_ledstrip",
-        "payload": "true",
-        "payloadType": "bool",
-        "x": 190,
+        "topic": "",
+        "payload": "on",
+        "payloadType": "str",
+        "x": 200,
         "y": 120,
         "wires": [
             [
@@ -105,24 +101,20 @@
         "id": "6f11063b6c0e34e0",
         "type": "inject",
         "z": "e9c2333c5527ce81",
-        "name": "",
+        "name": "cmnd/17_bureau_ledstrip/off",
         "props": [
             {
                 "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
             }
         ],
         "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "topic": "17_bureau_ledstrip",
-        "payload": "false",
-        "payloadType": "bool",
-        "x": 190,
+        "topic": "",
+        "payload": "off",
+        "payloadType": "str",
+        "x": 200,
         "y": 180,
         "wires": [
             [
