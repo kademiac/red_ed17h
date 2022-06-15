@@ -302,7 +302,7 @@
                 "vt": "str"
             }
         ],
-        "repeat": "3600",
+        "repeat": "43200",
         "crontab": "",
         "once": true,
         "onceDelay": "10",
