@@ -50,7 +50,8 @@
                 "default": "#0094CE",
                 "baseColor": "#0094CE",
                 "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false
+                "edited": true,
+                "reset": false
             },
             "darkTheme": {
                 "default": "#097479",
@@ -162,161 +163,9 @@
         "correl": "",
         "expiry": "",
         "broker": "525cd2c70143bff5",
-        "x": 470,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "c44ed64c03a28d90",
-        "type": "mqtt in",
-        "z": "e9c2333c5527ce81",
-        "name": "17_bureau_ledstrip",
-        "topic": "stat/17_bureau_ledstrip/RESULT",
-        "qos": "2",
-        "datatype": "auto",
-        "broker": "525cd2c70143bff5",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 230,
-        "y": 240,
-        "wires": [
-            [
-                "ce63af5d7e97f9e8"
-            ]
-        ]
-    },
-    {
-        "id": "0347d51bc49d11df",
-        "type": "inject",
-        "z": "e9c2333c5527ce81",
-        "name": "cmnd/17_bureau_ledstrip/on",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "on",
-        "payloadType": "str",
-        "x": 200,
-        "y": 140,
-        "wires": [
-            [
-                "e7df2de42142b237"
-            ]
-        ]
-    },
-    {
-        "id": "6f11063b6c0e34e0",
-        "type": "inject",
-        "z": "e9c2333c5527ce81",
-        "name": "cmnd/17_bureau_ledstrip/off",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "off",
-        "payloadType": "str",
-        "x": 200,
-        "y": 180,
-        "wires": [
-            [
-                "e7df2de42142b237"
-            ]
-        ]
-    },
-    {
-        "id": "ce63af5d7e97f9e8",
-        "type": "debug",
-        "z": "e9c2333c5527ce81",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 450,
+        "x": 750,
         "y": 240,
         "wires": []
-    },
-    {
-        "id": "8061ccc658bf1154",
-        "type": "sun events",
-        "z": "e9c2333c5527ce81",
-        "testmode": false,
-        "verbose": "N",
-        "topic": "sunstate",
-        "name": "Zonnekoning",
-        "x": 450,
-        "y": 300,
-        "wires": [
-            [
-                "9f4547171d9d6ea9"
-            ]
-        ],
-        "icon": "font-awesome/fa-sun-o"
-    },
-    {
-        "id": "9f4547171d9d6ea9",
-        "type": "debug",
-        "z": "e9c2333c5527ce81",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 590,
-        "y": 440,
-        "wires": []
-    },
-    {
-        "id": "eb601414149d5224",
-        "type": "inject",
-        "z": "e9c2333c5527ce81",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "43200",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "10",
-        "topic": "",
-        "payload": "sunstate",
-        "payloadType": "str",
-        "x": 260,
-        "y": 300,
-        "wires": [
-            [
-                "8061ccc658bf1154",
-                "7a5f8a6957597518"
-            ]
-        ]
     },
     {
         "id": "cab375f1a2710854",
@@ -338,8 +187,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 270,
-        "y": 100,
+        "x": 550,
+        "y": 240,
         "wires": [
             [
                 "e7df2de42142b237"
@@ -347,7 +196,143 @@
         ]
     },
     {
-        "id": "7a5f8a6957597518",
+        "id": "51616eaa2a1ca9fe",
+        "type": "bigtimer",
+        "z": "e9c2333c5527ce81",
+        "outtopic": "cmnd/17_bureau_ledstrip/POWER",
+        "outpayload1": "on",
+        "outpayload2": "off",
+        "name": "Big Timer",
+        "comment": "",
+        "lat": "51.20",
+        "lon": "4.45",
+        "starttime": "750",
+        "endtime": "765",
+        "starttime2": 0,
+        "endtime2": 0,
+        "startoff": 0,
+        "endoff": 0,
+        "startoff2": 0,
+        "endoff2": 0,
+        "offs": 0,
+        "outtext1": "",
+        "outtext2": "",
+        "timeout": "60",
+        "sun": true,
+        "mon": true,
+        "tue": true,
+        "wed": true,
+        "thu": true,
+        "fri": true,
+        "sat": true,
+        "jan": true,
+        "feb": true,
+        "mar": true,
+        "apr": true,
+        "may": true,
+        "jun": true,
+        "jul": true,
+        "aug": true,
+        "sep": true,
+        "oct": true,
+        "nov": true,
+        "dec": true,
+        "day1": 0,
+        "month1": 0,
+        "day2": 0,
+        "month2": 0,
+        "day3": 0,
+        "month3": 0,
+        "day4": 0,
+        "month4": 0,
+        "day5": 0,
+        "month5": 0,
+        "day6": 0,
+        "month6": 0,
+        "day7": 0,
+        "month7": 0,
+        "day8": 0,
+        "month8": 0,
+        "day9": 0,
+        "month9": 0,
+        "day10": 0,
+        "month10": 0,
+        "day11": 0,
+        "month11": 0,
+        "day12": 0,
+        "month12": 0,
+        "d1": 0,
+        "w1": 0,
+        "d2": 0,
+        "w2": 0,
+        "d3": 0,
+        "w3": 0,
+        "d4": 0,
+        "w4": 0,
+        "d5": 0,
+        "w5": 0,
+        "d6": 0,
+        "w6": 0,
+        "xday1": 0,
+        "xmonth1": 0,
+        "xday2": 0,
+        "xmonth2": 0,
+        "xday3": 0,
+        "xmonth3": 0,
+        "xday4": 0,
+        "xmonth4": 0,
+        "xday5": 0,
+        "xmonth5": 0,
+        "xday6": 0,
+        "xmonth6": 0,
+        "xday7": 0,
+        "xmonth7": 0,
+        "xday8": 0,
+        "xmonth8": 0,
+        "xday9": 0,
+        "xmonth9": 0,
+        "xday10": 0,
+        "xmonth10": 0,
+        "xday11": 0,
+        "xmonth11": 0,
+        "xday12": 0,
+        "xmonth12": 0,
+        "xd1": 0,
+        "xw1": 0,
+        "xd2": 0,
+        "xw2": 0,
+        "xd3": 0,
+        "xw3": 0,
+        "xd4": 0,
+        "xw4": 0,
+        "xd5": 0,
+        "xw5": 0,
+        "xd6": 0,
+        "xw6": 0,
+        "suspend": false,
+        "random": false,
+        "randon1": false,
+        "randoff1": false,
+        "randon2": false,
+        "randoff2": false,
+        "repeat": true,
+        "atstart": true,
+        "odd": false,
+        "even": false,
+        "x": 540,
+        "y": 180,
+        "wires": [
+            [],
+            [
+                "e7df2de42142b237"
+            ],
+            [
+                "d2b6fce713e1959d"
+            ]
+        ]
+    },
+    {
+        "id": "d2b6fce713e1959d",
         "type": "debug",
         "z": "e9c2333c5527ce81",
         "name": "",
@@ -358,8 +343,306 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 390,
-        "y": 440,
+        "x": 730,
+        "y": 180,
         "wires": []
+    },
+    {
+        "id": "588b55da4fa3f648",
+        "type": "inject",
+        "z": "e9c2333c5527ce81",
+        "name": "cmnd/17_bureau_ledstrip/on",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "on",
+        "payloadType": "str",
+        "x": 320,
+        "y": 160,
+        "wires": [
+            [
+                "51616eaa2a1ca9fe"
+            ]
+        ]
+    },
+    {
+        "id": "9bfc920d3904db79",
+        "type": "inject",
+        "z": "e9c2333c5527ce81",
+        "name": "cmnd/17_bureau_ledstrip/off",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "off",
+        "payloadType": "str",
+        "x": 320,
+        "y": 200,
+        "wires": [
+            [
+                "51616eaa2a1ca9fe"
+            ]
+        ]
+    },
+    {
+        "id": "14537993fde1fb4d",
+        "type": "mqtt out",
+        "z": "e9c2333c5527ce81",
+        "name": "17_kot_buitenlicht/POWER",
+        "topic": "cmnd/17_kot_buitenlicht/POWER",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "525cd2c70143bff5",
+        "x": 780,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "80fca3a2fa51fe0e",
+        "type": "debug",
+        "z": "e9c2333c5527ce81",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "0b2c03d04757c5d7",
+        "type": "ui_button",
+        "z": "e9c2333c5527ce81",
+        "name": "",
+        "group": "d84a2c02745b8599",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "toggle",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "toggle",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 550,
+        "y": 380,
+        "wires": [
+            [
+                "14537993fde1fb4d"
+            ]
+        ]
+    },
+    {
+        "id": "e589dd1e329be048",
+        "type": "bigtimer",
+        "z": "e9c2333c5527ce81",
+        "outtopic": "17_kot_buitenlicht/POWER",
+        "outpayload1": "on",
+        "outpayload2": "off",
+        "name": "Big Timer",
+        "comment": "",
+        "lat": "51.20",
+        "lon": "4.45",
+        "starttime": "5004",
+        "endtime": "1439",
+        "starttime2": 0,
+        "endtime2": 0,
+        "startoff": 0,
+        "endoff": 0,
+        "startoff2": 0,
+        "endoff2": 0,
+        "offs": 0,
+        "outtext1": "",
+        "outtext2": "",
+        "timeout": "60",
+        "sun": true,
+        "mon": true,
+        "tue": true,
+        "wed": true,
+        "thu": true,
+        "fri": true,
+        "sat": true,
+        "jan": true,
+        "feb": true,
+        "mar": true,
+        "apr": true,
+        "may": true,
+        "jun": true,
+        "jul": true,
+        "aug": true,
+        "sep": true,
+        "oct": true,
+        "nov": true,
+        "dec": true,
+        "day1": 0,
+        "month1": 0,
+        "day2": 0,
+        "month2": 0,
+        "day3": 0,
+        "month3": 0,
+        "day4": 0,
+        "month4": 0,
+        "day5": 0,
+        "month5": 0,
+        "day6": 0,
+        "month6": 0,
+        "day7": 0,
+        "month7": 0,
+        "day8": 0,
+        "month8": 0,
+        "day9": 0,
+        "month9": 0,
+        "day10": 0,
+        "month10": 0,
+        "day11": 0,
+        "month11": 0,
+        "day12": 0,
+        "month12": 0,
+        "d1": 0,
+        "w1": 0,
+        "d2": 0,
+        "w2": 0,
+        "d3": 0,
+        "w3": 0,
+        "d4": 0,
+        "w4": 0,
+        "d5": 0,
+        "w5": 0,
+        "d6": 0,
+        "w6": 0,
+        "xday1": 0,
+        "xmonth1": 0,
+        "xday2": 0,
+        "xmonth2": 0,
+        "xday3": 0,
+        "xmonth3": 0,
+        "xday4": 0,
+        "xmonth4": 0,
+        "xday5": 0,
+        "xmonth5": 0,
+        "xday6": 0,
+        "xmonth6": 0,
+        "xday7": 0,
+        "xmonth7": 0,
+        "xday8": 0,
+        "xmonth8": 0,
+        "xday9": 0,
+        "xmonth9": 0,
+        "xday10": 0,
+        "xmonth10": 0,
+        "xday11": 0,
+        "xmonth11": 0,
+        "xday12": 0,
+        "xmonth12": 0,
+        "xd1": 0,
+        "xw1": 0,
+        "xd2": 0,
+        "xw2": 0,
+        "xd3": 0,
+        "xw3": 0,
+        "xd4": 0,
+        "xw4": 0,
+        "xd5": 0,
+        "xw5": 0,
+        "xd6": 0,
+        "xw6": 0,
+        "suspend": false,
+        "random": false,
+        "randon1": false,
+        "randoff1": false,
+        "randon2": false,
+        "randoff2": false,
+        "repeat": true,
+        "atstart": true,
+        "odd": false,
+        "even": false,
+        "x": 540,
+        "y": 320,
+        "wires": [
+            [],
+            [
+                "14537993fde1fb4d"
+            ],
+            [
+                "80fca3a2fa51fe0e"
+            ]
+        ]
+    },
+    {
+        "id": "55bddf822cb737c1",
+        "type": "inject",
+        "z": "e9c2333c5527ce81",
+        "name": "cmnd/17_kot_buitenlicht/on",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "on",
+        "payloadType": "str",
+        "x": 320,
+        "y": 300,
+        "wires": [
+            [
+                "e589dd1e329be048"
+            ]
+        ]
+    },
+    {
+        "id": "584b54d845f7d089",
+        "type": "inject",
+        "z": "e9c2333c5527ce81",
+        "name": "cmnd/17_kot_buitenlicht/off",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "off",
+        "payloadType": "str",
+        "x": 320,
+        "y": 340,
+        "wires": [
+            [
+                "e589dd1e329be048"
+            ]
+        ]
     }
 ]
